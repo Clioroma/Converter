@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('currency-converter', include('exchange_app.urls')),
+    path('about_us', include('exchange_app.urls')),
     path('', include('exchange_app.urls'))
 ]
